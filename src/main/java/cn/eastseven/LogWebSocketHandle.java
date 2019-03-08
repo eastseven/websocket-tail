@@ -18,8 +18,8 @@ import java.io.InputStream;
 @Component
 public class LogWebSocketHandle extends TextWebSocketHandler {
 
-    @Value("${cmd: tail -f a.log}")
-    private String command;
+    @Value("${cmd.tail.path: a.log}")
+    private String path;
 
     private Process process;
     private InputStream inputStream;
@@ -43,7 +43,8 @@ public class LogWebSocketHandle extends TextWebSocketHandler {
 
         try {
             // 执行tail -f命令
-            log.info(">>> 执行tail -f命令[{}]", command);
+            final String command = "tail -f " + path;
+            log.info(">>> 执行命令[{}]", command);
             process = Runtime.getRuntime().exec(command);
             inputStream = process.getInputStream();
 

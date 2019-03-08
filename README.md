@@ -9,8 +9,8 @@
 ```bash
 mvn clean package
 
-java -jar target/app.jar
+java -jar  -Dcmd.tail.path=日志文件绝对路径 target/websocket-tail-1.0.0.jar
 
 ```
 
-浏览器访问 http://ip:port/ 即可
+浏览器访问 http://localhost:8765/ 即可

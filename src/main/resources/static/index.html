@@ -13,8 +13,25 @@
 </body>
 <script>
     $(document).ready(function () {
+        console.log('>>> start...');
         // 指定websocket路径
-        var websocket = new WebSocket('ws://127.0.0.1:8765/log');
+        var websocket = new WebSocket('ws://gojidev-log.eastseven.cn/log');
+
+        //打开webSocket连接时，回调该函数
+        websocket.onopen = function () {
+            console.log(">>> open");
+        };
+
+        //关闭webSocket连接时，回调该函数
+        websocket.onclose = function () {
+            //关闭连接
+            console.log(">>> close");
+        };
+
+        websocket.onerror = function (ev) {
+            console.log('>>> error', ev);
+        };
+
         websocket.onmessage = function (event) {
             // 接收服务端的实时日志并添加到HTML页面中
             $("#log-container div").append(event.data);

@@ -5,6 +5,7 @@
 - [Java WebSocket + tail命令实现Web实时日志](https://xxgblog.com/2015/11/25/java-websocket-tail/)
 - [springboot websocket简单入门](https://segmentfault.com/a/1190000016012270)
 - [nginx websocket简介及配置](http://coolnull.com/4275.html)
+- [Nginx配置Basic Auth登录认证](https://www.jianshu.com/p/b4a78af4e266)
 
 ### 部署
 ```bash
